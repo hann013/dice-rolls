@@ -9,7 +9,26 @@ header = '<title>Dice Roll Generator</title><h1 class="header">Dice Roll Generat
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         self.response.out.write(css)
-        self.response.out.write(header + '<img src="http://4.bp.blogspot.com/-xFKg63rUjqY/U3MgB8_2TbI/AAAAAAAABj0/bsONym-FvVA/s1600/Six+faces+of+a+dice.JPG" width=487 height=82><br><br><form action="/check" method="get"><div>Number of dice rolls: <input type="text" name="rolls"></div><div><input type="submit" value="Submit"></div></form>')
+        self.response.out.write(header + 
+            '<img src="http://4.bp.blogspot.com/-xFKg63rUjqY/U3MgB8_2TbI/AAAAAAAABj0/bsONym-FvVA/s1600/Six+faces+of+a+dice.JPG" width=487 height=82>' + 
+            '<br><br>' + 
+            '<form id="diceForm" onsubmit="checkNumber(event)" action="/check" method="get">' +
+                '<div>Number of dice rolls: <input id="numRolls" type="text" name="rolls"></div><br>' + 
+                '<div><input type="submit" value="Submit"></div>' + 
+            '</form>' + 
+            '<div id="errorMessage" style="display: none;">Please enter a valid integer!</div>' +
+            '<script>' + 
+                'function checkNumber(event) {' +
+                    'event.preventDefault();' +
+                    'var input = document.getElementById("numRolls").value;' +
+                    'if (parseInt(input)) {' +
+                        'document.getElementById("diceForm").submit();' + 
+                    '} ' + 
+                    'else {' +
+                        'document.getElementById("errorMessage").style.display = "block";' +
+                    '}' +
+                '}' +
+            '</script>')
 
 class CheckHandler(webapp2.RequestHandler):
     def get(self):
