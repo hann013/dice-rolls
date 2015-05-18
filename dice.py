@@ -3,7 +3,7 @@ import random
 
 rolls = 0
 
-css = "<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'> <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'> <style> body { background-image: url('http://static.parade.condenast.com/wp-content/uploads/2013/10/life-lessons-from-poker-ftr.jpg'); font-family: 'Maven Pro', sans-serif; font-size: 15pt; text-align: center; text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black; color: white; } h1.header { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 40pt; color: white; } span { font-size: 20pt; font-weight: 700; color: yellow; } </style>"
+css = "<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'> <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'> <style> body { background-image: url('/img/background.jpg'); background-size: cover; font-family: 'Maven Pro', sans-serif; font-size: 15pt; text-align: center; text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black; color: white; } h1.header { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 40pt; color: white; } span { font-size: 20pt; font-weight: 700; color: yellow; } </style>"
 header = '<title>Dice Roll Generator</title><h1 class="header">Dice Roll Generator</h1>'
 
 class MainHandler(webapp2.RequestHandler):
